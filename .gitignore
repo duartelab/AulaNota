@@ -1,0 +1,29 @@
+# Ambiente local
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Gerado pelo instalador (o repositório mantém os manifests por navegador)
+extension/manifest.json
+
+# Memória local do projeto / anotações privadas
+AGENTS.md
+AGENTS.local.md
+
+# Vault, banco e fila locais (ficam fora do repositório por padrão)
+Estudos/
+.aulanota/
+*.db
+*.sqlite3
+
+# Editor / sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs e temporários
+*.log
+*.tmp

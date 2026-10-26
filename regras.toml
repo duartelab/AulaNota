@@ -1,0 +1,48 @@
+[geral]
+# Onde as notas ficam. É um vault do Obsidian (crie/abra essa pasta no Obsidian).
+vault = "~/Estudos"
+idioma = "pt-BR"
+
+[notas]
+# A transcrição completa é texto, não gravação. Fica recolhida no fim da nota.
+incluir_transcricao = false
+max_palavras_chunk = 900
+sobreposicao_palavras = 100
+
+[modelo]
+nome = "qwen3:4b-instruct"
+url = "http://127.0.0.1:11434"
+num_ctx = 4096
+temperatura = 0.2
+
+[legendas]
+# Se o vídeo for privado, tente "firefox", "chrome", "chromium" ou "brave"
+# (lê os cookies locais; nada é enviado para fora da máquina).
+cookies = ""
+
+[servidor]
+host = "127.0.0.1"
+porta = 8790
+
+# ---------------------------------------------------------------------------
+# Disciplinas: mapeiam a página da aula (AVA, Udemy, Alura, Hotmart...) para
+# um id estável usado no nome da pasta e no cabeçalho da nota.
+# "padroes" são expressões regulares testadas contra URL + título da página.
+# O que não casar aqui é identificado automaticamente pelo domínio/título.
+# ---------------------------------------------------------------------------
+
+[[disciplina]]
+id = "CALC1"
+nome = "Cálculo I"
+padroes = [
+  "moodle\\.suainstituicao\\.edu\\.br/course/view\\.php\\?id=123",
+  "C[áa]lculo\\s*I",
+]
+
+[[disciplina]]
+id = "PROG1"
+nome = "Programação I"
+padroes = [
+  "udemy\\.com/course/programacao-",
+  "Programa[çc][ãa]o\\s*I",
+]

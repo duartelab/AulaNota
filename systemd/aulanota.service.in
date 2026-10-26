@@ -1,0 +1,15 @@
+[Unit]
+Description=AulaNota — notas de aula locais a partir do CC do YouTube
+After=pipewire.service
+Wants=ollama.service
+
+[Service]
+Type=simple
+WorkingDirectory=__RAIZ__
+ExecStart=__RAIZ__/aulanota.sh serve
+Environment=PYTHONUNBUFFERED=1
+Restart=on-failure
+RestartSec=3
+
+[Install]
+WantedBy=default.target

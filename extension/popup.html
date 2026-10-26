@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>AulaNota</title>
+<style>
+  :root { color-scheme: light dark; --indigo:#4338ca; --ok:#16a34a; --erro:#dc2626; --cinza:#6b7280; }
+  * { box-sizing: border-box; }
+  body { width: 350px; margin: 0; font: 13px/1.45 system-ui, -apple-system, "Segoe UI", sans-serif; }
+  header { display:flex; align-items:center; justify-content:space-between; padding:12px 14px; border-bottom:1px solid rgba(120,120,120,.25); }
+  header strong { font-size:15px; letter-spacing:.2px; }
+  .pill { font-size:11px; padding:2px 8px; border-radius:999px; background:rgba(120,120,120,.18); color:var(--cinza); }
+  .pill.on { background:rgba(22,163,74,.16); color:var(--ok); }
+  .pill.off { background:rgba(220,38,38,.14); color:var(--erro); }
+  main { padding:12px 14px 6px; }
+  .rotulo { font-size:10.5px; text-transform:uppercase; letter-spacing:.6px; color:var(--cinza); margin:8px 0 3px; }
+  .titulo { font-weight:600; }
+  .sub { color:var(--cinza); font-size:12px; word-break:break-word; }
+  button { width:100%; padding:10px 12px; border:0; border-radius:8px; background:var(--indigo); color:#fff; font-weight:600; font-size:13px; cursor:pointer; margin-top:10px; }
+  button:disabled { opacity:.55; cursor:default; }
+  button.secundario { background:transparent; color:var(--indigo); border:1px solid var(--indigo); margin-top:6px; font-weight:500; }
+  .msg { min-height:16px; font-size:12px; color:var(--cinza); margin-top:6px; white-space:pre-wrap; word-break:break-word; }
+  .msg.erro { color:var(--erro); }
+  .msg.ok { color:var(--ok); }
+  input { width:100%; padding:8px 10px; border-radius:8px; border:1px solid rgba(120,120,120,.45); background:transparent; color:inherit; font:12px system-ui, sans-serif; margin-top:4px; }
+  .ops { display:flex; flex-direction:column; gap:6px; margin:12px 0; padding-top:10px; border-top:1px solid rgba(120,120,120,.2); }
+  .ops label { display:flex; gap:8px; align-items:center; font-size:12px; }
+  .job { margin-top:8px; padding:8px 10px; border-radius:8px; background:rgba(67,56,202,.1); font-size:12px; }
+  .oculto { display:none; }
+  ul { list-style:none; padding:0; margin:2px 0 8px; }
+  li { padding:5px 0; border-bottom:1px solid rgba(120,120,120,.14); font-size:12px; }
+  li span { display:block; color:var(--cinza); font-size:11px; }
+  footer { padding:8px 14px 12px; color:var(--cinza); font-size:10.5px; word-break:break-all; }
+  .link { cursor:pointer; text-decoration:underline; }
+</style>
+</head>
+<body>
+<header>
+  <strong>AulaNota</strong>
+  <span id="daemon" class="pill">verificando…</span>
+</header>
+<main>
+  <div class="rotulo">Vídeo detectado</div>
+  <div id="video" class="titulo">—</div>
+  <div id="pagina" class="sub">—</div>
+
+  <button id="gerar">Gerar notas desta aula</button>
+  <button id="gerarTodas" class="secundario">Gerar de todas as abas de aula abertas</button>
+
+  <div class="rotulo" style="margin-top:12px">Se não detectar, cole o link do vídeo</div>
+  <input id="link" type="url" placeholder="https://www.youtube.com/watch?v=...">
+  <button id="gerarLink" class="secundario">Gerar a partir do link</button>
+  <div id="msg" class="msg"></div>
+
+  <div class="ops">
+    <label><input type="checkbox" id="auto"> Automático nas aulas</label>
+    <label><input type="checkbox" id="autoYoutube"> Também no YouTube</label>
+  </div>
+
+  <div id="job" class="job oculto"></div>
+
+  <div class="rotulo">Últimas notas</div>
+  <ul id="recentes"><li>—</li></ul>
+</main>
+<footer id="vault">Daemon: <span id="servidor">—</span></footer>
+<script src="popup.js"></script>
+</body>
+</html>

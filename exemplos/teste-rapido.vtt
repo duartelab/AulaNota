@@ -1,0 +1,33 @@
+WEBVTT
+Kind: captions
+Language: pt-BR
+
+00:00:01.000 --> 00:00:06.000
+Este é um teste automático do mecanismo de notas do AulaNota.
+
+00:00:06.000 --> 00:00:12.000
+O objetivo é confirmar que a legenda vira texto, o texto vira nota e a nota é salva em disco.
+
+00:00:12.000 --> 00:00:18.000
+Se você está lendo esta nota, o salvamento funcionou corretamente.
+
+00:00:18.000 --> 00:00:24.000
+A disciplina de teste é TESTE e a data é a do dia em que o teste rodou.
+
+00:00:24.000 --> 00:00:30.000
+Tarefa de exemplo: conferir se o arquivo aparece na pasta da disciplina e no índice.
+
+00:00:30.000 --> 00:00:36.000
+Também devemos confirmar que a busca local encontra a palavra salvamento.
+
+00:00:36.000 --> 00:00:42.000
+O prazo desta tarefa de teste é hoje, apenas para exercitar a extração de prazos.
+
+00:00:42.000 --> 00:00:48.000
+Conceito importante: idempotência significa que rodar de novo não duplica a nota.
+
+00:00:48.000 --> 00:00:54.000
+Conceito importante: persistência significa que a nota continua existindo depois de reiniciar o programa.
+
+00:00:54.000 --> 00:01:00.000
+Fim do teste. A nota deve conter resumo, conceitos, desenvolvimento e tarefas.
